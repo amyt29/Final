@@ -123,9 +123,9 @@ body {
 	background: url("../img/Headerimage-03.png") no-repeat;
 	background-position: 0px 20px;
 	min-height: 120px; 
-}
+}filter: progid:DXImageTransform>Mircosfot.gradient
 
-.header-container headerr nav{
+header-container header nav{
 	position: relative;
 	top: -15px;
 }
@@ -162,7 +162,7 @@ body {
       background: -webkit-linear-gradient(top, #bab2b5 0%, #ac3b61 100%);
       background: -ms-linear-gradient(top,#bab2b5 0%, #ac3b61 100%);
       background: -moz-linear-gradient(to bottom, #bab2b5 0%, #ac3b61 100%);
-        filter: progid:DXImageTransform>Mircosfot.gradient ( startColorstr='#bab2b5', endColorstr='ac3b61', Gradient Type=0);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bab2b5', endColorstr='ac3b61', Gradient Type=0);
     }
     
     nav a:hover {
@@ -222,7 +222,7 @@ body {
     
     .gallery_tagline{
         font-family: 'hvd_bodedomedium', Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-        font-size: 67px;
+        font-size: 27px;
         color: #444;
         padding: 10px 50px 30px;
         text-align: center;
@@ -257,16 +257,9 @@ body {
     /* ==========================================================================
        Author's custom styles
        ========================================================================== */
-    .fltrt{
-        float: right;
-    }
-    
-    .fltleft{
-        float: left;
-    }
     
     .aligncenter{
-        clear: both
+        clear: both;
         display: block;
         margin-left: auto;
         margin-right: auto;

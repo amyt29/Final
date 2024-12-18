@@ -1,0 +1,134 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html,
+button,
+input, 
+select,
+textarea {
+    color: #222;
+}
+
+@font-face{
+	font-family: 'hvd_bodedomedium';
+    src: url('../fonts/HVD_Bodedo-webfont.eot');
+    src: url('../fonts/HVD_Bodedo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HVD_Bodedo-webfont.woff2') format('woff2'),
+         url('../fonts/HVD_Bodedo-webfont.woff') format('woff'),
+         url('../fonts/HVD_Bodedo-webfont.ttf') format('truetype'),
+         url('../fonts/HVD_Bodedo-webfont.svg#hvd_bodedomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body{
+	font-size:1em;
+	line-height: 1.4;
+}
+
+#title{
+	position: relative;
+	width: 8em;
+	font-family: 'hvd_bodedomedium', Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	color: #123c69;
+	left: 22em;
+}
+
+#subtitle{
+	font-family: 'hvd_bodedomedium', Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	position: relative;
+	width: 3em;
+	color: #123b69;
+	left: 33em;
+	top: -0.8em;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+	color: #fff;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+	background: url("../img/Bg copy.png");
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+}
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+
+.header-container, main aside{	
+	-webkit-box-shadow: 0px 3px 20px 1px #555;
+	box-shadow: 0px 1px 20px 1px #222;
+}
+
+.header-container{
+  width: 100%;
+  background:#ac3b61;
+  background: -o-linear-gradient(top, #bab2b5 0%, #ac3b61 100%);
+  background: -webkit-linear-gradient(top, #bab2b5 0%, #ac3b61 100%);
+  background: -ms-linear-gradient(top,#bab2b5 0%, #ac3b61 100%);
+  background: -moz-linear-gradient(to bottom, #bab2b5 0%, #ac3b61 100%);
+  filter: progid:dximagetransform mircosfot.gradient ( startColorstr='#bab2b5', endColorstr='ac3b61', Gradient Type=0);
+  border-bottom: (1px solid #4b310F);
+}
+
+.header-container header{
+	background: url("../img/Headerimage-03.png") no-repeat;
+	background-position: 0px 20px;
+	min-height: 120px; 
+}
+
+.header-container headerr nav{
+	position: relative;
+	top: -15px;
+}
+.title {
+	color: white;
+}

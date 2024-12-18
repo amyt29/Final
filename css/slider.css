@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#my_slider{
+	position: relative;
+	width: 95%;
+	height: 330px;
+	overflow: hidden;
+	list-style: none;
+	padding:0;
+	margin: 0px auto;
+}
+#my_slider li {
+ position: absolute;
+ top: 0px;
+ left: 0px;
+ display:none;
+}
+
+#my_slider li:first-child {
+ display:block;
+}

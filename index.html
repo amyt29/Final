@@ -12,9 +12,8 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/slider.css">
+		<link rel="stylesheet" href="css/slider.css">
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -22,9 +21,11 @@
         <![endif]-->
 
         <div class="header-container">
+
+
             <header class="wrapper clearfix">
                 <h1 id="title" class="text_shadow">Puck's</h1>
-                <h2 id="subtitle" class="test_shadow">Corner</h2>
+				<h2 id="subtitle" class="test_shadow">Corner</h2>
                 <nav>
                     <ul>
                         <a href="Who's-Puck.html">Who's Puck</a>
@@ -50,8 +51,8 @@
                             <img src="img/slideshow/224035.png" alt="Should have taken those chicken nuggets when I had the chance..." />
                         </li>
                     </ul>
-                    <div class="gallery_tagline">Caption goes here</div>
-                </div><!--end of content_gallery-->
+                </div>
+
 
 
                 <section id="sidebar01">
@@ -65,22 +66,55 @@
                                 He reflects a lot of his habits based on his owner, if they were napping at their desk, 
                                 he’d be there just next to them napping until they had awoken, or if he saw them eating fruit he would demand to have a share. </p>
                         </header>
-
                         <section>
-                            <h2>Leave a comment!</h2>
-                            <form id="commentForm">
-                                <textarea id="commentInput" placeholder="Leave your comment here"></textarea><br>
-                                <button type="button" onclick="submitComment()">Submit</button>
-                            </form>
-
-                            <h3>Comments</h3>
-                            <ul id="commentList"></ul>
-                        </section>
+                                <h2>Leave a comment!</h2>
+                                <form id="commentForm">
+                                    <textarea id="commentInput" placeholder="Leave your comment here"></textarea><br>
+                                    <button type="button" onclick="submitComment()">Submit</button>
+                                </form>
+                            
+                                <h3>Comments</h3>
+                                <ul id="commentList"></ul>
+                            </section>
+                            
+                        </footer>
                     </article>
                 </section>
             </div> <!-- #main-container -->
         </div>
+        <script>
+        const comments = JSON.parse(localStorage.getItem('comments')) || [];
 
+        function renderComments() {
+            const commentList = document.getElementById('commentList');
+            commentList.innerHTML = '';
+
+            comments.forEach((comment) => {
+                const commentItem = document.createElement('li');
+                commentItem.textContent = comment;
+                commentList.appendChild(commentItem);
+            });
+        }
+
+        function submitComment() {
+            const commentInput = document.getElementById('commentInput').value.trim();
+
+            if (commentInput) {
+                comments.push(commentInput);
+                localStorage.setItem('comments', JSON.stringify(comments));
+                renderComments();
+                document.getElementById('commentInput').value = ''; // Clear the input field
+            } else {
+                alert('Please enter a comment!');
+            }
+        }
+
+        // Attach event listener to the submit button
+        document.getElementById('submitCommentBtn').addEventListener('click', submitComment);
+
+        // Initial rendering of comments
+        renderComments();
+    </script>
         <div class="footer-container">
             <footer class="wrapper">
                 <nav>
@@ -97,40 +131,7 @@
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-        <script>
-            // Initialize comment functionality
-            let comments = JSON.parse(localStorage.getItem('comments')) || [];
-
-            function renderComments() {
-                const commentList = document.getElementById('commentList');
-                commentList.innerHTML = '';
-                
-                comments.forEach((comment) => {
-                    const commentItem = document.createElement('li');
-                    commentItem.textContent = comment;
-                    commentList.appendChild(commentItem);
-                });
-            }
-
-            function submitComment() {
-                const commentInput = document.getElementById('commentInput').value;
-
-                if (commentInput) {
-                    comments.push(commentInput);
-                    localStorage.setItem('comments', JSON.stringify(comments));
-                    renderComments();
-                    document.getElementById('commentInput').value = ''; // Clear input field
-                } else {
-                    alert('Please enter a comment!');
-                }
-            }
-
-            // Render comments when the page loads
-            renderComments();
-        </script>
-
+        
+		</div>
     </body>
 </html>

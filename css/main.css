@@ -1,15 +1,9 @@
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
-
-html,
-button,
-input, 
-select,
-textarea {
+html, button, input, select, textarea {
     color: #222;
 }
 
-@font-face{
-	font-family: 'hvd_bodedomedium';
+@font-face {
+    font-family: 'hvd_bodedomedium';
     src: url('../fonts/HVD_Bodedo-webfont.eot');
     src: url('../fonts/HVD_Bodedo-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/HVD_Bodedo-webfont.woff2') format('woff2'),
@@ -18,39 +12,38 @@ textarea {
          url('../fonts/HVD_Bodedo-webfont.svg#hvd_bodedomedium') format('svg');
     font-weight: normal;
     font-style: normal;
-
-}
-body{
-	font-size:1em;
-	line-height: 1.4;
 }
 
-#title{
-	position: relative;
-	width: 8em;
-	font-family: 'hvd_bodedomedium', Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	color: #123c69;
-	left: 22em;
+body {
+    font-size: 1em;
+    line-height: 1.4;
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    background: url("../img/Bg copy.png");
 }
 
-#subtitle{
-	font-family: 'hvd_bodedomedium', Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	position: relative;
-	width: 3em;
-	color: #123b69;
-	left: 33em;
-	top: -0.8em;
+#title, #subtitle {
+    font-family: 'hvd_bodedomedium', Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 }
 
-::-moz-selection {
+#title {
+    position: relative;
+    width: 8em;
+    color: #123c69;
+    left: 22em;
+}
+
+#subtitle {
+    position: relative;
+    width: 3em;
+    color: #123b69;
+    left: 33em;
+    top: -0.8em;
+}
+
+::-moz-selection, ::selection {
     background: #b3d4fc;
     text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-	color: #fff;
+    color: #fff;
 }
 
 hr {
@@ -61,7 +54,6 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
 
 img {
     vertical-align: middle;
@@ -84,432 +76,287 @@ textarea {
     padding: 0.2em 0;
 }
 
-
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
-	background: url("../img/Bg copy.png");
-}
-.content h1 {
-    color: #333;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+/* Header and Footer */
+.header-container, main aside {
+    box-shadow: 0px 1px 20px 1px #222;
 }
 
-.content ul {
-    list-style: disc inside;
-    margin: 20px 0;
+.header-container {
+    width: 100%;
+    background: #ac3b61;
+    background: linear-gradient(to bottom, #bab2b5 0%, #ac3b61 100%);
+    border-bottom: 1px solid #4b310F;
 }
 
-.content img {
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+.header-container header {
+    background: url("../img/Headerimage-03.png") no-repeat;
+    background-position: 0px 20px;
+    min-height: 120px;
 }
 
-.wrapper {
-    width: 90%;
-    margin: auto;
-}
-
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.header-container, main aside{	
-	-webkit-box-shadow: 0px 3px 20px 1px #555;
-	box-shadow: 0px 1px 20px 1px #222;
-}
-
-.header-container{
-  width: 100%;
-  background:#ac3b61;
-  background: -o-linear-gradient(top, #bab2b5 0%, #ac3b61 100%);
-  background: -webkit-linear-gradient(top, #bab2b5 0%, #ac3b61 100%);
-  background: -ms-linear-gradient(top,#bab2b5 0%, #ac3b61 100%);
-  background: -moz-linear-gradient(to bottom, #bab2b5 0%, #ac3b61 100%);
-  filter: progid:dximagetransform mircosfot.gradient ( startColorstr='#bab2b5', endColorstr='ac3b61', Gradient Type=0);
-  border-bottom: (1px solid #4b310F);
-}
-
-.header-container header{
-	background: url("../img/Headerimage-03.png") no-repeat;
-	background-position: 0px 20px;
-	min-height: 120px; 
-}filter: progid:DXImageTransform>Mircosfot.gradient
-
-header-container header nav{
-	position: relative;
-	top: -15px;
-}
-.title {
-	color: white;
-}
-
-/* ==============
-    MOBILE: Menu
-   ============== */
-   nav { 
+nav {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-        margin-top: 44px;
-        
+    margin-top: 44px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav a, nav a:visited {
+    display: block;
+    margin-bottom: 10px;
+    padding: 3.5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #123C69;
+    background: linear-gradient(to bottom, #bab2b5 0%, #ac3b61 100%);
+}
+
+nav a:hover {
+    color: #2981DF;
+    text-decoration: underline;
+}
+
+footer nav {
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+    padding: 10px 0px;
+}
+
+footer nav a, footer nav a:visited {
+    display: block;
+    padding: 2px;
+    color: #555;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+}
+
+footer nav a:hover, footer nav a:active, footer nav a:focus {
+    color: #C38D9E;
+    text-decoration: none;
+}
+
+/* Mobile Styles */
+.main {
+    position: relative;
+    top: -15px;
+    padding: 15px 0px 0px;
+    background: white;
+    box-shadow: 0px 3px 4px 0px #111;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.gallery_tagline {
+    font-family: 'hvd_bodedomedium', Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    font-size: 27px;
+    color: #444;
+    padding: 10px 50px 30px;
+    text-align: center;
+}
+
+.footer-container, .main-aside {
+    border-top: 20px solid #e44d26;
+}
+
+.footer-container footer {
+    width: 100%;
+    min-height: 100px;
+    background-image: url("../img/Puck's-Corner-pro_06.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 85%;
+}
+
+.text_shadow {
+    text-shadow: 2px 2px 2px #b3b3b3;
+}
+
+/* IE Fixes */
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 480px) {
+    header nav a {
+        float: left;
+        width: 10%;
+        margin: 0px 1%;
+        padding: 10px 2%;
+        background: none;
     }
-    nav ul {
-        margin: 0;
-        padding: 0;
+
+    .footer-container {
+        height: 50px;
     }
-    
-    nav a, nav a:visited {
-        display: block;
-        margin-bottom: 10px;
-        padding: 3.5px;
-    
+
+    footer nav ul {
+        font-size: 12px;
+        width: 70%;
+        margin: 0px auto;
         text-align: center;
-        text-decoration: none;
-        font-weight: bold;
-        
-        color: #123C69;
-        background: #ac3b61;
-        background: -o-linear-gradient(top, #bab2b5 0%, #ac3b61 100%);
-      background: -webkit-linear-gradient(top, #bab2b5 0%, #ac3b61 100%);
-      background: -ms-linear-gradient(top,#bab2b5 0%, #ac3b61 100%);
-      background: -moz-linear-gradient(to bottom, #bab2b5 0%, #ac3b61 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bab2b5', endColorstr='ac3b61', Gradient Type=0);
     }
-    
-    nav a:hover {
-        color: #2981DF;
-        text-decoration: underline;
-    }
-    
-    footer nav{
-        font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
-        padding: 10px 0px;
-    }
-    
-    footer nav a, footer nav a:visited{
-        display: block;
+
+    footer nav a, footer nav a:visited {
+        display: inline;
         padding: 2px;
-        color:#555;
+        color: #555;
         text-align: center;
         text-decoration: none;
         font-weight: bold;
         background: none;
-    } 
-    
-    footer nav a:hover, footer nav a:active, footer nav a:focus{
-        color:#C38D9E;
-        text-decoration: none;
     }
-    
-    /* ==============
-        MOBILE: Main
-       ============== */
-    
-    .main {
-        position: relative;
-        top: -15px;
-        padding: 15px 0px 0px;
-        background: white;
-        -webkit-box-shadow: 0px 3px 4px 0px #111;
-        box-shadow: 0px 3px 4px 0px #111;
+
+    nav ul li {
+        display: inline;
     }
-    
-    .main .content_gallery img {
-        width: 100%;
+
+    .oldie nav a {
+        margin: 0 0.7%;
     }
-    
-    .main article{
-        padding: 0px 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .header-container, .main aside {
+        box-shadow: 0 5px 10px #aaa;
     }
-    
-    .main article h1 {
-        font-size: 2em;
+
+    nav {
+        width: 95%;
     }
-    
+
+    .title {
+        float: right;
+    }
+
+    header nav {
+        width: 90%;
+        margin: 45px 10px 0px 0px;
+    }
+
+    .main article {
+        float: left;
+    }
+
     .main aside {
-        color: white;
-        padding: 0px 5% 10px;
+        float: right;
+        width: 28%;
     }
-    
-    .gallery_tagline{
-        font-family: 'hvd_bodedomedium', Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-        font-size: 27px;
-        color: #444;
-        padding: 10px 50px 30px;
-        text-align: center;
+}
+
+@media only screen and (min-width: 1140px) {
+    .wrapper {
+        width: 1026px;
+        margin: 0 auto;
     }
-    
-    .footer-cotainer,
-    .main-aside{
-        border-top: 20px solid #e44d26;
-    }
-    
-    .footer-container footer{
+
+    header nav {
         width: 100%;
-        min-height: 100px;
-        background-image: url("../img/Puck's-Corner-pro_06.png");
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-size: 85%;
     }
-    
-    .text_shadow{
-        text-shadow: 2px 2px 2px #b3b3b3;
-        filter: dropshadow(color=#b3b3b3, offx=2, offy=2);
+}
+
+/* Helper Classes */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/* Print Styles */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
     }
-    /* ===============
-        ALL: IE Fixes
-       =============== */
-    
-    .ie7 .title {
-        padding-top: 20px;
+
+    a, a:visited {
+        text-decoration: underline;
     }
-    
-    /* ==========================================================================
-       Author's custom styles
-       ========================================================================== */
-    
-    .aligncenter{
-        clear: both;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+
+    a[href]:after {
+        content: " (" attr(href) ")";
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /* ==========================================================================
-       Media Queries
-       ========================================================================== */
-    
-    @media only screen and (min-width: 480px) {
-    
-    /* ====================
-        INTERMEDIATE: Menu
-       ==================== */
-    
-        header nav a{
-            float: left;
-            width: 10%;
-            margin: 0px 1%;
-            padding: 10px 2%;
-            background: none;
-        }
-        
-        .footer-container{
-            height: 50px;
-        }
-        footer nav ul{
-            font-size: 12px;
-            width: 70%;
-            margin: 0px auto;
-            text-align:center;
-        }
-        
-        footer nav a, footer nav a:visited{
-            display:inline;
-            padding: 2px;
-            color: #555;
-            text-align: center;
-            text-decoration:none;
-            font-weight: bold;
-            background: none;
-        }
-       
-    /* ========================
-        INTERMEDIATE: IE Fixes
-       ======================== */
-    
-        nav ul li {
-            display: inline;
-        }
-    
-        .oldie nav a {
-            margin: 0 0.7%;
-        }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
     }
-    
-    @media only screen and (min-width: 768px) {
-    
-    /* ====================
-        WIDE: CSS3 Effects
-       ==================== */
-    
-        .header-container,
-        .main aside {
-            -webkit-box-shadow: 0 5px 10px #aaa;
-               -moz-box-shadow: 0 5px 10px #aaa;
-                    box-shadow: 0 5px 10px #aaa;
-        }
-    
-    /* ============
-        WIDE: Menu
-       ============ */
-        nav {
-            width: 95%;
-        }
-    
-        .title {
-            float: right;
-        }
-    
-        header nav {
-            float: center;
-            width: 90%;
-            margin: 45px 10px 0px 0px;
-        }
-    
-    /* ============
-        WIDE: Main
-       ============ */
-    
-        .main article {
-            float: left;
-        }
-    
-        .main aside {
-            float: right;
-            width: 28%;
-        }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
     }
-    
-    @media only screen and (min-width: 1140px) {
-    
-    /* ===============
-        Maximal Width
-       =============== */
-    
-        .wrapper {
-            width: 1026px; /* 1140px - 10% for margins */
-            margin: 0 auto;
-        }
-        header nav{
-            width: 100%;
-        }
+
+    pre, blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
     }
-    
-    /* ==========================================================================
-       Helper classes
-       ========================================================================== */
-    
-    .hidden {
-        display: none !important;
-        visibility: hidden;
+
+    thead {
+        display: table-header-group;
     }
-    
-    .visuallyhidden {
-        border: 0;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
+
+    tr, img {
+        page-break-inside: avoid;
     }
-    
-    .visuallyhidden.focusable:active,
-    .visuallyhidden.focusable:focus {
-        clip: auto;
-        height: auto;
-        margin: 0;
-        overflow: visible;
-        position: static;
-        width: auto;
+
+    img {
+        max-width: 100% !important;
     }
-    
-    .invisible {
-        visibility: hidden;
+
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
     }
-    
-    .clearfix:before,
-    .clearfix:after {
-        content: " ";
-        display: table;
+
+    h2, h3 {
+        page-break-after: avoid;
     }
-    
-    .clearfix:after {
-        clear: both;
-    }
-    
-    .clearfix {
-        *zoom{} 1;
-    }
-    
-    /* ==========================================================================
-       Print styles
-       ========================================================================== */
-    
-    @media print {
-        *,
-        *:before,
-        *:after {
-            background: transparent !important;
-            color: #000 !important;
-            box-shadow: none !important;
-            text-shadow: none !important;
-        }
-    
-        a,
-        a:visited {
-            text-decoration: underline;
-        }
-    
-        a[href]:after {
-            content: " (" attr(href) ")";
-        }
-    
-        abbr[title]:after {
-            content: " (" attr(title) ")";
-        }
-    
-        a[href^="#"]:after,
-        a[href^="javascript:"]:after {
-            content: "";
-        }
-    
-        pre,
-        blockquote {
-            border: 1px solid #999;
-            page-break-inside: avoid;
-        }
-    
-        thead {
-            display: table-header-group;
-        }
-    
-        tr,
-        img {
-            page-break-inside: avoid;
-        }
-    
-        img {
-            max-width: 100% !important;
-        }
-    
-        p,
-        h2,
-        h3 {
-            orphans: 3;
-            widows: 3;
-        }
-    
-        h2,
-        h3 {
-            page-break-after: avoid;
-        }
-    }
+}

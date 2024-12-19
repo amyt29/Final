@@ -32,42 +32,53 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-                <section class="content">
-                    <article>
-                        <header>
-                            <h1>Meet Puck!</h1>
-                        </header>
-                        <p>Puck is a charming and lovable pet who has stolen the hearts of everyone he meets. 
-                            With his playful antics and curious personality, Puck is always up for an adventure!</p>
-                        <h2>Puck's Favorite Activities</h2>
-                        <ul>
-                            <li>Begging for bananas</li>
-                            <li>Snuggling on the his owner's legs</li>
-                            <li>Exploring new places (except the bathroom)</li>
-                            <li>Trying out tasty snacks</li>
-                        </ul>
-                        <h2>Fun Facts About Puck</h2>
-                        <p>Puck is known for his unique quirk: he loves laying with his paws out</p>
-                        <img src="img/puck_photo.jpg" alt="Photo of Puck" style="max-width:100%; height:auto;">
-                    </article>
+                <section id="loginSection">
+                    <h1>Login</h1>
+                    <form id="loginForm">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Enter your email" required><br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" placeholder="Enter your password" required><br>
+                        <button type="button" onclick="handleLogin()">Login</button>
+                    </form>
+                    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
                 </section>
             </div>
         </div>
 
-        <div class="footer-container">
-            <footer class="wrapper">
-                <nav>
-                    <ul>
-                        <li><a href="#">Customer Service</a></li>
-                        <li><a href="#">Photo FAQ</a></li>
-                    </ul>
-                </nav>
-            </footer>
-        </div><!--end of footer-container -->
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+
+        <script>
+            const rootDiv = document.getElementById('root');
+            const userNameKey = 'userName';
+            const userEmailKey = 'userEmail';
+            const userPasswordKey = 'userPassword';
+
+            // Check if there's any user logged in, if so, redirect them
+            if (localStorage.getItem(userNameKey)) {
+                window.location.href = 'index.html'; // redirect to homepage or dashboard
+            }
+
+            // Handle Login functionality
+            function handleLogin() {
+                const emailInput = document.getElementById('email').value;
+                const passwordInput = document.getElementById('password').value;
+
+                // Get stored user details from localStorage
+                const storedEmail = localStorage.getItem(userEmailKey);
+                const storedPassword = localStorage.getItem(userPasswordKey);
+
+                // Validate login
+                if (emailInput === storedEmail && passwordInput === storedPassword) {
+                    // Login successful, redirect to home page
+                    localStorage.setItem(userNameKey, emailInput); // Store user session
+                    window.location.href = 'index.html'; // Redirect to the home page (or dashboard)
+                } else {
+                    alert('Invalid credentials, please try again.');
+                }
+            }
+
+        </script>
     </body>
 </html>

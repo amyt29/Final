@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Who's Puck - Puck's Corner</title>
-        <meta name="description" content="Learn more about Puck, the star of Puck's Corner.">
+        <title>Login - Puck's Corner</title>
+        <meta name="description" content="Login to Puck's Corner.">
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/normalize.min.css">
@@ -42,6 +42,9 @@
                         <button type="button" onclick="handleLogin()">Login</button>
                     </form>
                     <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+
+                    <!-- Sign Out Button (Visible after login) -->
+                    <button id="signOutBtn" style="display: none;" onclick="handleSignOut()">Sign Out</button>
                 </section>
             </div>
         </div>
@@ -55,30 +58,62 @@
             const userEmailKey = 'userEmail';
             const userPasswordKey = 'userPassword';
 
-            // Check if there's any user logged in, if so, redirect them
-            if (localStorage.getItem(userNameKey)) {
-                window.location.href = 'index.html'; // redirect to homepage or dashboard
-            }
-
             // Handle Login functionality
             function handleLogin() {
                 const emailInput = document.getElementById('email').value;
                 const passwordInput = document.getElementById('password').value;
 
-                // Get stored user details from localStorage
+                // Get the user data from localStorage
                 const storedEmail = localStorage.getItem(userEmailKey);
                 const storedPassword = localStorage.getItem(userPasswordKey);
 
-                // Validate login
+                // Check if the entered credentials match the stored ones
                 if (emailInput === storedEmail && passwordInput === storedPassword) {
-                    // Login successful, redirect to home page
-                    localStorage.setItem(userNameKey, emailInput); // Store user session
-                    window.location.href = 'index.html'; // Redirect to the home page (or dashboard)
+                    // Login successful: Show home page and welcome message
+                    localStorage.setItem('loggedIn', 'true');
+                    alert('Login successful!');
+                    window.location.href = 'index.html'; // Redirect to home page or dashboard
                 } else {
-                    alert('Invalid credentials, please try again.');
+                    alert('Invalid email or password. Please try again.');
                 }
             }
 
+            // Handle Sign Out functionality
+            function handleSignOut() {
+                // Clear the logged-in status and user data
+                localStorage.removeItem('loggedIn');
+                localStorage.removeItem(userNameKey);
+                localStorage.removeItem(userEmailKey);
+                localStorage.removeItem(userPasswordKey);
+
+                // Redirect to login page
+                alert('You have been logged out.');
+                window.location.href = 'login.html'; // Redirect back to login page
+            }
+
+            // Check if the user is already logged in
+            if (localStorage.getItem('loggedIn') === 'true') {
+                // If logged in, show sign-out button
+                document.getElementById('signOutBtn').style.display = 'inline-block';
+                document.getElementById('loginSection').innerHTML = `
+                    <h1>Welcome Back, ${localStorage.getItem(userNameKey)}!</h1>
+                    <button id="signOutBtn" onclick="handleSignOut()">Sign Out</button>
+                `;
+            } else {
+                // If not logged in, show login form
+                document.getElementById('loginSection').innerHTML = `
+                    <h1>Login</h1>
+                    <form id="loginForm">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Enter your email" required><br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" placeholder="Enter your password" required><br>
+                        <button type="button" onclick="handleLogin()">Login</button>
+                    </form>
+                    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+                `;
+            }
         </script>
     </body>
 </html>
+
